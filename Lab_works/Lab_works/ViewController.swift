@@ -47,6 +47,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             validationPassword = "Your password is too short.\n"
         }
         output.text = emptyFields + validationEmail + validationPhone + validationPassword + passwordsMatch
+        if (output.text == ""){
+            output.text = "Success!"
+        }
     }
     
     override func viewDidLoad() {
