@@ -2,8 +2,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-private let API_URL = URL(string: "https://newsapi.org/v2/everything?domains=nationalgeographic.com&apiKey=7e11ca926e534fefa89e0cb71c19acb8")!
-
 class ApiManager{
     var articlesData: [ArticleModel] = []
     private let API_URL = URL(string: "https://newsapi.org/v2/everything?domains=nationalgeographic.com&apiKey=7e11ca926e534fefa89e0cb71c19acb8")!
