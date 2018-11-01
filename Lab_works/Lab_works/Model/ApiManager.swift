@@ -6,19 +6,19 @@ class ApiManager{
     private let API_URL = URL(string: "https://newsapi.org/v2/everything?domains=nationalgeographic.com&apiKey=7e11ca926e534fefa89e0cb71c19acb8")!
     
     public func fetchPhotosData(){
-        DispatchQueue.main.async {
             Alamofire.request(self.API_URL).responseJSON { response in
                 switch response.result {
                 case .success(let value):
-                    self.extractedFunc(value)
+                    DispatchQueue.main.async {
+                        self.parseData(value)
+                    }
                 case .failure(let error):
                     print(error.localizedDescription)
-                }
             }
         }
     }
    
-    fileprivate func extractedFunc(_ value: (Any)) {
+    fileprivate func parseData(_ value: (Any)) {
         var articlesData: [ArticleModel] = []
         let json = JSON(value)
         json["articles"].array?.forEach({ (article) in
