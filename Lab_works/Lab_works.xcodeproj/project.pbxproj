@@ -14,6 +14,7 @@
 		AB6E6EDF217644BB0096F3E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6E6EDE217644BB0096F3E5 /* Assets.xcassets */; };
 		AB6E6EE2217644BB0096F3E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB6E6EE0217644BB0096F3E5 /* LaunchScreen.storyboard */; };
 		AB6E6EEB217698A00096F3E5 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E6EEA217698A00096F3E5 /* ArticleModel.swift */; };
+		AB8D9C5D217D0A33007F9DAA /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8D9C5C217D0A33007F9DAA /* ApiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		AB6E6EE1217644BB0096F3E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB6E6EE3217644BB0096F3E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB6E6EEA217698A00096F3E5 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		AB8D9C5C217D0A33007F9DAA /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		CDDE6F78C5467D53CF8D111C /* Pods-Lab_works.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lab_works.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lab_works/Pods-Lab_works.debug.xcconfig"; sourceTree = "<group>"; };
 		D5BB3F33BB6BE2ABA0B09CF1 /* Pods_Lab_works.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lab_works.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				AB6E6EEA217698A00096F3E5 /* ArticleModel.swift */,
+				AB8D9C5C217D0A33007F9DAA /* ApiManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,6 +136,7 @@
 				TargetAttributes = {
 					AB6E6ED3217644B90096F3E5 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -213,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB8D9C5D217D0A33007F9DAA /* ApiManager.swift in Sources */,
 				AB6E6EEB217698A00096F3E5 /* ArticleModel.swift in Sources */,
 				AB6E6EDA217644B90096F3E5 /* ViewController.swift in Sources */,
 				AB6E6ED8217644B90096F3E5 /* AppDelegate.swift in Sources */,
@@ -368,7 +373,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Olga.Lab-works";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -386,7 +391,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Olga.Lab-works";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
