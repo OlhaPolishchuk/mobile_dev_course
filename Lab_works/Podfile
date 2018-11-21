@@ -5,4 +5,5 @@ use_frameworks!
 target 'Lab_works' do
     pod 'Alamofire', '~> 4.7'
     pod 'SwiftyJSON'
+    pod 'Kingfisher', '~> 4.0'
 end
