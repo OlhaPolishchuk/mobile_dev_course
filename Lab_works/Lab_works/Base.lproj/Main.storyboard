@@ -17,6 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcB-gY-4i6">
+                                <rect key="frame" x="168" y="439.5" width="78" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Iu-Bu-0yx">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -87,11 +93,14 @@
                             <constraint firstItem="2Iu-Bu-0yx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A8w-iw-z6c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Iu-Bu-0yx" secondAttribute="trailing" id="LcC-6h-hBe"/>
                             <constraint firstItem="2Iu-Bu-0yx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QfT-6S-JdI"/>
+                            <constraint firstItem="tcB-gY-4i6" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="eOL-hH-Ep4"/>
+                            <constraint firstItem="tcB-gY-4i6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hkM-fi-InP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2Iu-Bu-0yx" secondAttribute="bottom" id="iB1-hL-urf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="nodataView" destination="tcB-gY-4i6" id="fDc-hW-1MK"/>
                         <outlet property="tableView" destination="2Iu-Bu-0yx" id="kHa-4s-K5V"/>
                     </connections>
                 </viewController>

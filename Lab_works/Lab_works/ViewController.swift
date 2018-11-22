@@ -4,6 +4,7 @@ import Kingfisher
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nodataView: UILabel!
     
     var refreshControl: UIRefreshControl?
     var articlesData: [ArticleModel] = []
@@ -11,12 +12,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let ArticleManager = ApiManager()
-        func update (data:[ArticleModel]) {
-            articlesData = data
-            tableView.reloadData()
-        }
         ArticleManager.fetchPhotosData(successCallback: update);
         addRefreshControl()
+        nodataView.isHidden = false
+        tableView.isHidden = false
+    }
+    
+    func update (data:[ArticleModel]) {
+        changeListVisibility(data.count > 0)
+        
+        articlesData = data
+        tableView.reloadData()
+    }
+    
+    func changeListVisibility(_ visible: Bool) {
+        nodataView.isHidden = visible;
+        tableView.isHidden = !visible;
     }
     
     func addRefreshControl() {
@@ -35,30 +46,11 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    private func noData(message:String, viewController: ViewController) {
-        let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: view.bounds.size.width, height: view.bounds.size.height))
-        let noDataMessage = UILabel(frame: rect)
-        noDataMessage.text = message
-        noDataMessage.textColor = UIColor.black
-        noDataMessage.numberOfLines = 0;
-        noDataMessage.font = UIFont(name: "Georgia", size: 35)
-        noDataMessage.textAlignment = .center;
-        noDataMessage.sizeToFit()
-        
-        viewController.tableView.backgroundView = noDataMessage;
-        viewController.tableView.separatorStyle = .none;
-    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if articlesData.count > 0 {
-            noData(message: "", viewController: self)
             return articlesData.count
-        } else {
-            noData(message: "No data", viewController: self)
-            return 0
-        }
     }
     
     
