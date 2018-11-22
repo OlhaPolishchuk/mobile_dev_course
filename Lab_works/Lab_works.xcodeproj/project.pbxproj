@@ -14,7 +14,8 @@
 		AB6E6EDF217644BB0096F3E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6E6EDE217644BB0096F3E5 /* Assets.xcassets */; };
 		AB6E6EE2217644BB0096F3E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB6E6EE0217644BB0096F3E5 /* LaunchScreen.storyboard */; };
 		AB6E6EEB217698A00096F3E5 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E6EEA217698A00096F3E5 /* ArticleModel.swift */; };
-		AB8D9C5D217D0A33007F9DAA /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8D9C5C217D0A33007F9DAA /* ApiManager.swift */; };
+		AB8D9C6A219D6D97007F9DAA /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8D9C69219D6D97007F9DAA /* ApiManager.swift */; };
+		ABAE3FBC217772AC00BF77E6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE3FBB217772AC00BF77E6 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,8 @@
 		AB6E6EE1217644BB0096F3E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB6E6EE3217644BB0096F3E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB6E6EEA217698A00096F3E5 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
-		AB8D9C5C217D0A33007F9DAA /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		AB8D9C69219D6D97007F9DAA /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		ABAE3FBB217772AC00BF77E6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		CDDE6F78C5467D53CF8D111C /* Pods-Lab_works.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lab_works.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lab_works/Pods-Lab_works.debug.xcconfig"; sourceTree = "<group>"; };
 		D5BB3F33BB6BE2ABA0B09CF1 /* Pods_Lab_works.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lab_works.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,6 +76,7 @@
 		AB6E6ED6217644B90096F3E5 /* Lab_works */ = {
 			isa = PBXGroup;
 			children = (
+				ABAE3FBA2177728600BF77E6 /* View */,
 				AB6E6EE9217698760096F3E5 /* Model */,
 				AB6E6ED7217644B90096F3E5 /* AppDelegate.swift */,
 				AB6E6ED9217644B90096F3E5 /* ViewController.swift */,
@@ -89,9 +92,17 @@
 			isa = PBXGroup;
 			children = (
 				AB6E6EEA217698A00096F3E5 /* ArticleModel.swift */,
-				AB8D9C5C217D0A33007F9DAA /* ApiManager.swift */,
+				AB8D9C69219D6D97007F9DAA /* ApiManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		ABAE3FBA2177728600BF77E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABAE3FBB217772AC00BF77E6 /* TableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B8FA421FE75A3662611F61EC /* Frameworks */ = {
@@ -180,11 +191,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Lab_works/Pods-Lab_works-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,8 +230,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB8D9C5D217D0A33007F9DAA /* ApiManager.swift in Sources */,
 				AB6E6EEB217698A00096F3E5 /* ArticleModel.swift in Sources */,
+				ABAE3FBC217772AC00BF77E6 /* TableViewCell.swift in Sources */,
+				AB8D9C6A219D6D97007F9DAA /* ApiManager.swift in Sources */,
 				AB6E6EDA217644B90096F3E5 /* ViewController.swift in Sources */,
 				AB6E6ED8217644B90096F3E5 /* AppDelegate.swift in Sources */,
 			);
@@ -367,6 +381,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Lab_works/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -385,6 +400,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Lab_works/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
