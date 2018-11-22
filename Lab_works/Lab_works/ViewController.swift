@@ -17,7 +17,6 @@ class ViewController: UIViewController {
         }
         ArticleManager.fetchPhotosData(successCallback: update);
         addRefreshControl()
-        
     }
     
     func addRefreshControl() {
@@ -53,7 +52,6 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     //   return articlesData.count
         if articlesData.count > 0 {
             noData(message: "", viewController: self)
             return articlesData.count
