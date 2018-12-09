@@ -1,10 +1,10 @@
-language: objective-c
+language: swift
 osx_image: xcode10.0
 
 branches:
   only:
   - master
-  - /^v.*$/
+  - Lab_9
 before_install:
   - rvm install ruby-2.2.2
   - gem install cocoapods
