@@ -56,9 +56,5 @@ class FavouriteViewController: UIViewController {
         // cell.img.kf.setImage(with: URL(string: articlesData[indexPath.row].urlToImage))
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
 }
 
