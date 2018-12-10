@@ -14,7 +14,7 @@ before_install:
   - brew update
 script:
   - set -o pipefail
-  - xcodebuild -workspace Lab_works/Lab_works.xcworkspace -scheme Lab_works -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
+  - xcodebuild -workspace Lab_works/Lab_works.xcworkspace -scheme Lab_works -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c | awk 'BEGIN {success=0} $0 ~ /.* tests, with 0 failures \(.*/ {success=1} {print $0} END {if(success==0){exit 1}}
   - xcodebuild -scheme Lab_works archive
 deploy:
   provider: releases
