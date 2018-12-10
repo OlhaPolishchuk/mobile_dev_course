@@ -12,7 +12,7 @@ before_install:
   - brew update
 script:
   - set -o pipefail
-  - xcodebuild -workspace Lab_works.xcworkspace -scheme Lab_works -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
+  - xcodebuild -workspace Lab_works/Lab_works.xcworkspace -scheme Lab_works -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
 deploy:
   provider: releases
   api_key: "$Git_key"
