@@ -1,12 +1,10 @@
 language: swift
-osx_image: xcode10.1
+osx_image: xcode10.0
 
 branches:
   only:
-    - master
-    - /v\d+\.\d+[a-z]/
-env:
-  - LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8
+  - master
+  - /^v.*$/
 before_install:
   - rvm install ruby-2.2.2
   - gem install cocoapods
@@ -14,16 +12,12 @@ before_install:
   - brew update
 script:
   - set -o pipefail
-  - xcodebuild -workspace Lab_works/Lab_works.xcworkspace -scheme Lab_works -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | awk 'BEGIN {success=0} $0 ~ /.* tests, with 0 failures \(.*/ {success=1}
-  - xcodebuild -scheme Lab_works archive
+  - xcodebuild -workspace Lab_works.xcworkspace -scheme Lab_works -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
 deploy:
   provider: releases
-  tag_name: $TRAVIS_TAG
-  target_commitish: $TRAVIS_COMMIT
-  name: $TRAVIS_TAG
-  api_key: '$GITKEY'
-  git : Lab_works.xcodeproj
+  api_key: "$Git_key"
+  file : /Users/travis/Library/Developer/Xcode/DerivedData/Lab_works-fztiiouihfuodtbppihzphudsdif/Build/Products/Debug-iphonesimulator/Lab_works.app
   skip_cleanup: true
   on:
-     tags: true
+     tags: false
      all_branches: true
