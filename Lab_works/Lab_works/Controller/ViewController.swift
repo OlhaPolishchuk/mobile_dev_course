@@ -1,5 +1,5 @@
 import UIKit
-import Kingfisher
+// import Kingfisher
 
 class ViewController: UIViewController {
     
@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let ArticleManager = ApiManager()
-        ArticleManager.fetchPhotosData(successCallback: update);
+        ArticleManager.fetchPhotosData(successCallback: update)
         addRefreshControl()
         nodataView.isHidden = false
         tableView.isHidden = false
@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     
     func update (data:[ArticleModel]) {
         changeListVisibility(data.count > 0)
-        
         articlesData = data
         tableView.reloadData()
     }
@@ -45,7 +44,6 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
@@ -61,12 +59,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         }
         cell.lblAuthor.text = articlesData[indexPath.row].author
         cell.lblTitle.text = articlesData[indexPath.row].title
-        cell.img.kf.setImage(with: URL(string: articlesData[indexPath.row].urlToImage))
+        // cell.img.kf.setImage(with: URL(string: articlesData[indexPath.row].urlToImage))
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsSegue" {
+            if let indexPath = tableView.indexPathForSelectedRow{
+                let destVC = segue.destination as! ArticleViewController
+                destVC.articlesData = [articlesData[indexPath.row]]
+            }
+        }
     }
 }
 
