@@ -1,5 +1,5 @@
 import UIKit
-import Kingfisher
+// import Kingfisher
 
 class ArticleViewController: UIViewController {
     var articlesData: [ArticleModel] = []
@@ -38,7 +38,7 @@ class ArticleViewController: UIViewController {
         super.viewWillAppear(animated)
         articleAuthor.text = articlesData[0].author
         articleTitle.text = articlesData[0].title
-        articleImage.kf.setImage(with: URL(string: articlesData[0].urlToImage))
+       // articleImage.kf.setImage(with: URL(string: articlesData[0].urlToImage))
     }
 }
 

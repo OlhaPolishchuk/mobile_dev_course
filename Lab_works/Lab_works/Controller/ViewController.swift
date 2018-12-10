@@ -1,5 +1,5 @@
 import UIKit
-import Kingfisher
+// import Kingfisher
 
 class ViewController: UIViewController {
     
@@ -59,7 +59,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         }
         cell.lblAuthor.text = articlesData[indexPath.row].author
         cell.lblTitle.text = articlesData[indexPath.row].title
-        cell.img.kf.setImage(with: URL(string: articlesData[indexPath.row].urlToImage))
+        // cell.img.kf.setImage(with: URL(string: articlesData[indexPath.row].urlToImage))
         return cell
     }
     
